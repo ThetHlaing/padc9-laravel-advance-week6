@@ -2019,6 +2019,21 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     login: function login() {
       console.log(this.email, this.password);
+      var login_url = "/api/v1/login/";
+      var bodyData = new FormData();
+      bodyData.set("email", this.email);
+      bodyData.set("password", this.password);
+      var payLoad = {
+        email: this.email,
+        password: this.password
+      };
+      axios({
+        method: "POST",
+        url: login_url,
+        data: payLoad
+      }).then(function (response) {
+        console.log(response);
+      });
     }
   }
 });
