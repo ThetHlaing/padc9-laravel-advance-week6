@@ -30,6 +30,10 @@ Vue.component('text-input', require('./components/TextInput.vue').default);
 Vue.component('textarea-input', require('./components/TextareaInput.vue').default);
 
 Vue.component('categories-select', require('./components/CategoriesSelect.vue').default);
+
+Vue.component('post-list', require('./components/PostList.vue').default);
+
+Vue.component('login-form', require('./components/LoginForm.vue').default);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -39,3 +43,6 @@ Vue.component('categories-select', require('./components/CategoriesSelect.vue').
 const app = new Vue({
     el: '#app',
 });
+
+
+

@@ -23,10 +23,15 @@ Route::get('/home', function () {
 
 Route::resource('post', 'PostController');
 
+Route::prefix('jsapp/')->as('jsapp.')->group(function () {
+    Route::get('post', 'JSApp\PostController@index');
 
-Route::prefix('api/web/v1/')->middleware('auth')->namespace('Api\v1')->group(function () {
+    Route::get('login-form', 'JSApp\LoginController@index');
+});
 
-    // Route::apiResource('post', 'PostController');
+Route::prefix('api/web/v1/')->as('web.api.')->middleware('auth')->namespace('Api\v1')->group(function () {
+
+    Route::apiResource('post', 'PostController');
 
     Route::apiResource('category', 'CategoryController');
 });
